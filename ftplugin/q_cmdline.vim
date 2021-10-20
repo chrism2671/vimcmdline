@@ -3,7 +3,7 @@ if !exists("g:cmdline_job")
     runtime plugin/vimcmdline.vim
 endif
 
-" Write a temp file and source this temp file
+" Write a temp file and source this temp fileProjects
 function! KdbSourceLines(lines)
     call writefile(a:lines, g:cmdline_tmp_dir . "/lines.q")
     call VimCmdLineSendCmd("\\l " . g:cmdline_tmp_dir . "/lines.q")
@@ -13,7 +13,7 @@ let b:cmdline_nl = "\n"
 " b:cmdline_app should not be an expression like 'rlwrap q' 
 " to do this create a script, add it to your PATH and set b:cmdlineapp
 " accordingly
-let b:cmdline_app = "q"
+let b:cmdline_app = "/home/chris/.config/nvim/start_q.sh"
 let b:cmdline_quit_cmd = "\\\\"
 let b:cmdline_source_fun = function("KdbSourceLines")
 let b:cmdline_send_empty = 1
